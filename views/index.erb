@@ -1,0 +1,14 @@
+say something smart
+
+<!-- More complex Ruby with erb
+
+If you have a collection to loop through, such as an array or a hash, you use a slightly different syntax:
+
+Let's add the following content to app.rb:
+
+names = ["bobert", "tom", "missy", "kristy"]
+
+get '/' do
+  @names = names
+  erb :index
+end

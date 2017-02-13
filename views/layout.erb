@@ -1,0 +1,26 @@
+<!-- Assets & Sinatra Layouts
+
+Any files in the public folder will be served as static assets.
+
+For example, you would create a file public/css/styles.css and link to it with
+
+<link rel="stylesheet" type="text/css" href="/css/styles.css">
+It's important to note here that we don't include the 'public' folder in the 'href' path. This is Sinatra convention. The styles won't apply if you do include 'public' in the path.
+
+Instead of copying and pasting this link to each of the views, we can use a global layout view. This will be loaded "around" every other view. -->
+
+<!-- views/layout.erb -->
+<!doctype html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <style>
+      body{
+        background-color: <%= @colors %>
+      }
+    </style>
+  </head>
+  <body>
+    <%= yield %> <!-- load whatever template was called here -->
+  </body>
+</html>
